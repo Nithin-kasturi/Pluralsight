@@ -3,8 +3,21 @@ pipeline{
     stages{
         stage("CHecking"){
             steps{
-                sh 'echo "hi"'
+                sh 'echo "Checked Done"'
             }
+        }
+        stage("CHeckout SCM"){
+            //Clone repository to jenkins workspace
+            git branch: 'main', url: 'https://github.com/Nithin-kasturi/Pluralsight.git'
+
+        }
+        stage("Build"){
+            steps{
+                sh 'npm install'
+            }
+        }
+        stage("Test"){
+            
         }
     }
 }
