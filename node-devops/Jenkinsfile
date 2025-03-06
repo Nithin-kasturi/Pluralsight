@@ -8,7 +8,10 @@ pipeline{
         }
         stage("CHeckout SCM"){
             //Clone repository to jenkins workspace
-            git branch: 'main', url: 'https://github.com/Nithin-kasturi/Pluralsight.git'
+            steps{
+            git branch: 'main', url: 'https://github.com/Nithin-kasturi/Pluralsight.git'    
+
+            }
 
         }
         stage("Build"){
