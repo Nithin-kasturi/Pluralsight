@@ -1,5 +1,13 @@
 pipeline{
     agent any
+    environment{
+        APP_NAME="node-devops"
+        DOCKER_PASS="dockerpass"
+        DOCKER_USER="nithin8"
+        RELEASE="1.0.0"
+        IMAGE_NAME="${DOCKER_USER}"+"/"+"${APP_NAME}"
+        IMAGE_TAG="${RELEASE}-${BUILD_NUMBER}"
+    }
     stages{
         stage("CHecking"){
             steps{
@@ -21,11 +29,23 @@ pipeline{
         }
         stage("Test"){
             steps{
-                sh "npm jest"
+                sh "node test.js"
             }
         }
         stage("Build and push to docker"){
-            
+            steps {
+                script {
+                    docker.withRegistry('',DOCKER_PASS) {
+                        docker_image = docker.build "${IMAGE_NAME}"
+                    }
+
+                    docker.withRegistry('',DOCKER_PASS) {
+                        docker_image.push("${IMAGE_TAG}")
+                        docker_image.push('latest')
+                    }
+                }
+            }
+
         }
     }
 }
