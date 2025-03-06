@@ -24,5 +24,8 @@ pipeline{
                 sh "npm jest"
             }
         }
+        stage("Build and push to docker"){
+            
+        }
     }
 }
