@@ -1,0 +1,7 @@
+pipeline{
+    stages{
+        stage("CHecking"){
+            sh 'echo "hi"'
+        }
+    }
+}
