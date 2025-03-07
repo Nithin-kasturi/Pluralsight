@@ -1,15 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Setup Kubernetes Context') {
-            steps {
-                script {
-                    // Assuming kubeconfig is stored at /home/jenkins/.kube/config
-                    sh 'export KUBEVIRT_KUBECONFIG=/home/jenkins/.kube/config'
-                    sh 'export KUBEVIRT_KUBERNETES_API_SERVER="https://minikube"'
-                }
-            }
-        }
 
         stage('Deploy Helm Chart') {
             steps {
