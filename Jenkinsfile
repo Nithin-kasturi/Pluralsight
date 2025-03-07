@@ -7,8 +7,7 @@ pipeline{
         RELEASE="1.0.0"
         IMAGE_NAME="${DOCKER_USER}"+"/"+"${APP_NAME}"
         IMAGE_TAG="${RELEASE}-${BUILD_NUMBER}"
-        HELM_CHART_PATH="/home/nithin/Pluralsight/helm/node-devops-chart"
-        HELM_RELEASE_NAME="node-devops-chart"
+        PATH="/home/nithin/Pluralsight/k8s/manifests"
     }
     stages{
         stage("CHecking"){
@@ -49,17 +48,21 @@ pipeline{
             }
 
         }
-        stage("Update tag in values"){
-            steps{
+        stage("Update image in deployment.yaml") {
+            steps {
                 sh """
-                        sed -i 's/tag: \".*\"/tag: \"${IMAGE_TAG}\"/' ${HELM_CHART_PATH}/values.yaml
-                    """
+                    sed -i 's|image: nithin8/node-devops:.*|image: nithin8/node-devops:${IMAGE_TAG}|' ${PATH}/deployment.yaml
+                """
             }
         }
+
         stage("Deploy Helm chart"){
             steps{
                 sh """
-                    helm upgrade --install ${HELM_RELEASE_NAME} ${HELM_CHART_PATH}
+                    kubectl apply -f /home/nithin/Pluralsight/k8s/manifests/deployment.yaml
+                    kubectl apply -f /home/nithin/Pluralsight/k8s/manifests/service.yaml
+                    kubectl apply -f /home/nithin/Pluralsight/k8s/manifests/ingress.yaml
+                    
                 """
             }
         }
