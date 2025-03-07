@@ -10,11 +10,6 @@ pipeline{
         PATH="/home/nithin/Pluralsight/k8s/manifests"
     }
     stages{
-        stage("CHecking"){
-            steps{
-                sh 'echo "Checked Done"'
-            }
-        }
         stage("CHeckout SCM"){
             //Clone repository to jenkins workspace
             steps{
