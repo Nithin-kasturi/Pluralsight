@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-devops
+  labels:
+    app: node-devops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-devops
+  template:
+    metadata:
+      labels:
+        app: node-devops
+    spec:
+      containers:
+      - name: node-devops
+        image: nithin8/node-devops:latest
+        ports:
+        - containerPort: 3000
