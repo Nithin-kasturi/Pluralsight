@@ -59,7 +59,7 @@ pipeline{
         stage("Deploy Helm chart"){
             steps{
                 sh """
-                    k
+                    helm upgrade --install ${HELM_RELEASE_NAME} ${HELM_CHART_PATH}
                 """
             }
         }
