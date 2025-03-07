@@ -148,156 +148,6 @@
   148  kubectl port-forward svc/go-web-app 8081:80
   149  history
   150  history >>history.txt
-    1  sudo apt update
-    2  sudo apt install openjdk-11-jdk
-    3  wget -q -O - https://pkg.jenkins.io/ci.gpg.key | sudo apt-key add -
-    4  sudo sh -c 'echo deb http://pkg.jenkins.io/debian/ stable main > /etc/apt/sources.list.d/jenkins.list'
-    5  sudo apt update
-    6  sudo apt install jenkins
-    7  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-    8  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]"   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
-    9  sudo apt-get update
-   10  sudo apt-get install jenkins
-   11  java -version
-   12  ls
-   13  vim first.sh
-   14  sh first.sh 
-   15  docker version
-   16  minikube start --driver=docker
-   17  minikube status
-   18  kubectl -version
-   19  kubectl get pods
-   20  sudo snap install kubectl
-   21  sudo snap install kubectl --classic
-   22  kubectl get pods
-   23  git clone https://github.com/iam-veeramalla/go-web-app
-   24  cd go-web-app/
-   25  code .
-   26  cd ..
-   27  rmdir go-web-app/
-   28  rmdir -f go-web-app/
-   29  rmdir -r go-web-app/
-   30  rmdir --help
-   31  rmdir -rf go-web-app/
-   32  rm -f go-web-app/
-   33  rm -r go-web-app/
-   34  rm -rf go-web-app/
-   35  ls
-   36  gi clone https://github.com/Nithin-kasturi/go-web-app
-   37  git clone https://github.com/Nithin-kasturi/go-web-app
-   38  cd go-web-app/
-   39  code .
-   40  docker login
-   41  ls
-   42  docker build -t nithin8/go-web-app:v1 .
-   43  go
-   44  sudo snap install go
-   45  sudo snap install go --classic
-   46  docker build -t nithin8/go-web-app:v1 .
-   47  go 
-   48  docker build -t nithin8/go-web-app:v1 .
-   49  docker run -p -it 8080:8080 nithin8/go-web-app:v1
-   50  docker run -p 8080:8080 -it nithin8/go-web-app:v1
-   51  docker push nithin8/go-web-app:v1
-   52  kubectl apply -f kubernetes/manifests/deployment.yml
-   53  ls
-   54  kubectl get pods
-   55  kubectl get ing
-   56  kubectl get pods
-   57  kubectl edit svc go-web-app
-   58  kubectl get svc
-   59  kubectl get nodes -o wide
-   60  minikube ip
-   61  kubectl get svc
-   62  minikube tunnel
-   63  minikube ip
-   64  kubectl get svc
-   65  kubectl port-forward svc/go-web-app 8080:80
-   66  minikube addons enable ingress
-   67  microk8s enable ingress
-   68  sudo snap install microk8s
-   69  sudo snap install microk8s --classic
-   70  kubectl get svc ing
-   71  kubectl get ing
-   72  nslookup 192.168.49.2
-   73  sudo apt install bind9-dnsutils
-   74  nslookup 192.168.49.2
-   75  kubectl get ing
-   76  nslookup 192.168.49.2
-   77  nslookup go-web-app.local
-   78  sudo nano /etc/hosts
-   79  nslookup go-web-app.local
-   80  helm
-   81  sudo snap install helm
-   82  sudo snap install helm --classic
-   83  helm version
-   84  helm create go-web-app-chart
-   85  cd Helm/
-   86  helm create go-web-app-chart
-   87  cd go-web-app-chart/
-   88  ls
-   89  rm charts
-   90  rm -rf charts
-   91  cd templates/
-   92  rm -rf .
-   93  cp ../../../Kubernetes/manifests/' .
-   94  cp ../../../Kubernetes/manifests/* .
-   95  ls
-   96  rm -rf *
-   97  ls
-   98  cp ../../../Kubernetes/manifests/* .
-   99  ls
-  100  kubectl get all
-  101  cd ./
-  102  cd /
-  103  ls
-  104  java -version
-  105  sudo systemctl start jenkins
-  106  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-  107  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]"   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
-  108  sudo apt-get update
-  109  sudo apt-get install jenkins
-  110  sudo systemctl start jenkins
-  111  sudo kill $(sudo lsof -t -i:8080)
-  112  sudo jenkins start
-  113  sudo apt update
-  114  sudo apt install fontconfig openjdk-17-jre
-  115  java -version
-  116  openjdk version "17.0.13" 2024-10-15
-  117  OpenJDK Runtime Environment (build 17.0.13+11-Debian-2)
-  118  OpenJDK 64-Bit Server VM (build 17.0.13+11-Debian-2, mixed mode, sharing)
-  119  jav -version
-  120  java -version
-  121  sudo start jenkins
-  122  sudo jenkins start
-  123  curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
-  124  sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
-  125  minikube status
-  126  minikube start
-  127  curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
-  128  sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
-  129  minikube status
-  130  minikube start --driver=docker
-  131  docker --version
-  132  sudo apt update
-  133  sudo apt install docker.io
-  134  sudo systemctl start docker
-  135  sudo systemctl enable docker
-  136  sudo systemctl status docker
-  137  minikube start --driver=docker
-  138  sudo usermod -aG docker $USER
-  139  minikube start --driver=docker
-  140  newgrp docker
-  141  echo UGNYVERGNzNQSi12VmJsaA== | base64 --decode
-  142  kubectl get all
-  143  kubectl port-forward svc/go-web-app 8080:80
-  144  kubectl port-forward svc/go-web-app 808:80
-  145  kubectl port-forward svc/go-web-app 8081:80
-  146  kubectl get pods
-  147  kubectl get svc
-  148  kubectl port-forward svc/go-web-app 8081:80
-  149  history
-  150  history >>history.txt
   151  ls
   152  cat history.txt 
   153  cp history.txt go-web-app/
@@ -425,11 +275,224 @@
   275  newgrp docker
   276  reboot
   277  sudo reboot
-  278  docker run hello-world
-  279  sudo usermod -a -G docker jenkins
-  280  ls -l /var/run/docker.sock
-  281  sudo chown root:docker /var/run/docker.sock
-  282  sudo chmod 660 /var/run/docker.sock
-  283  sudo usermod -aG docker jenkins
-  284  sudo systemctl restart jenkins
-  285  history >> history.txt
+  278  jenkins
+  279  systemctl jenkins start
+  280  systemctl start jenkins
+  281  sudo usermod -aG docker $USER
+  282  newgrp docker
+  283  jenkins
+  284  sudo systemctl start jenkins
+  285  ls
+  286  cd go-web-app/
+  287  git pull
+  288  code .
+  289  cd ..
+  290  cd Pluralsight/
+  291  code .
+  292  git pull
+  293  minikube status
+  294  minikube delete
+  295  minikube start 
+  296  kubectl apply -f k8s/manifests/deployment.yaml 
+  297  kubectl get nodes
+  298  kubectl get pods
+  299  kubectl wide -o node-devops-989d799d-bgwcx
+  300  kubectl get logs
+  301  kubectl get pods
+  302  kubectl get logs node-devops-989d799d-bgwcx
+  303  kubectl logs node-devops-989d799d-bgwcx
+  304  kubectl apply -f k8s/manifests/deployment.yaml 
+  305  kubectl get pods
+  306  kubectl logs node-devops-d966c9dcf-ppsmx
+  307  git add .
+  308  git commit -m 'Change docker'
+  309  git push
+  310  kubectl delete pods
+  311  kubectl delete -all  pods
+  312  kubectl delete all  pods
+  313  kubectl delete deployment 
+  314  kubectl get deploymnet
+  315  kubectl get deploymenet
+  316  kubectl get deploymment
+  317  kubectl get deployment
+  318  kubectl delete deployment node-devops
+  319  kubectl get pods
+  320  kubectl apply -f k8s/manifests/deployment.yaml 
+  321  kubectl get pods
+  322  kubectl get deployments
+  323  kubectl apply -f k8s/manifests/service.yaml 
+  324  kubectl port-forward 3000:3000 svc/node-devops
+  325  kubectl port-forward svc/node-devops 3000:3000
+  326  kubectl get pods
+  327  kubectl port-forward svc/node-devops 3000:3000
+  328  kubectl edit svc node-devops
+  329  kubectl port-forward svc/node-devops 3000:3000
+  330  kubectl edit svc node-devops
+  331  kubectl get svc node-devops -o yaml
+  332  kubectl edit svc node-devops
+  333  kubectl port-forward svc/node-devops 80:3000
+  334  kubectl port-forward svc/node-devops 3000:80
+  335  kubectl apply -f k8s/manifests/ingress.yaml 
+  336  curl -L http://foo.bar.com/bar -v
+  337  kubectl get svc
+  338  kubectl get ingress
+  339  minikube addons enable ingress
+  340  curl -L http://foo.bar.com/bar -v
+  341  kubectl apply -f k8s/manifests/ingress.yaml 
+  342  kubectl get ingress
+  343  vim /etc/hosts
+  344  sudo vim /etc/hosts
+  345  curl -L http://foo.bar.com/bar -v
+  346  ping foo.bar.com
+  347  kubectl port-forward svc/node-devops 80:3000
+  348  kubectl port-forward svc/node-devops 3000:80
+  349  kubectl apply -f k8s/manifests/ingress.yaml 
+  350  kubectl port-forward svc/node-devops 3000:80
+  351  cat /etc/hosts
+  352  kubectl get ing
+  353  kubectl get pods -n ingress-nginx
+  354  kubectl get svc -n ingress-nginx
+  355  kubectl get nodes -o wide
+  356  minikube ip
+  357  helm
+  358  cd helm/
+  359  helm install node-devops .
+  360  helm create node-devops-chart
+  361  kubectl delete deployment node-devops
+  362  kubectl delete ing node-devops
+  363  kubectl delete svc node-devops
+  364  kubectl get all
+  365  helm install node-devops-chart/ .
+  366  cd node-devops-chart/
+  367  cd ..
+  368  helm install node-devops node-devops-chart/
+  369  kubectl get nodes
+  370  kubectl get pods
+  371  kubectl get ing
+  372  systemctl jenkins start
+  373  kubectl get pods
+  374  kubectl delete deployment node-devops
+  375  kubectl delete svc node-devops
+  376  kubectl delete ing node-devops
+  377  helm uninstall node-devops
+  378  cd node-devops-chart/
+  379  cd ..
+  380  history
+  381  history | grep 'helm'
+  382  helm install node-devops node-devops-chart/
+  383  kubectl get pods
+  384  ls
+  385  cd node-devops-chart/
+  386  ls
+  387  pwd
+  388  helm upgrade node-devops-chart /home/nithin/Pluralsight/helm/node-devops-chart
+  389  helm
+  390  helm list
+  391  helm upgrade node-devops- /home/nithin/Pluralsight/helm/node-devops-chart
+  392  helm upgrade node-devops /home/nithin/Pluralsight/helm/node-devops-chart
+  393  wget https://bin.equinox.io/c/4v7Dp5x2pxa/ngrok-stable-linux-amd64.zip
+  394  wget https://ngrok.com/download -O ngrok-stable-linux-amd64.zip
+  395  unzip ngrok-stable-linux-amd64.zip
+  396  sudo apt-get unzip
+  397  sudo apt-get install unzip   # For Ubuntu/Debian
+  398  unzip ngrok-stable-linux-amd64.zip
+  399  ls
+  400  unzip ngrok-stable-linux-amd64.zip
+  401  ls
+  402  unzip ngrok-stable-linux-amd64
+  403  $ cd
+  404  $ mkdir ngrok && cd ngrok
+  405  $ cp $(ls ~/Downloads/ngrok*) ~/ngrok/
+  406  $ unzip ngrok-file.zip 
+  407  cd 
+  408  mkdir ngrok && cd ngrok
+  409  cp $(ls ~/Downloads/ngrok*) ~/ngrok/
+  410  cd 
+  411  ls
+  412  ls Pluralsight/
+  413  cd Pluralsight/
+  414  cd helm/
+  415  unzip ngrok-stable-linux-amd64.zip
+  416  ls -lh ngrok-stable-linux-amd64.zip
+  417  cd
+  418  cd ~/Downloads
+  419  cd Pluralsight/
+  420  cd helm/
+  421  wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+  422  unzip ngrok-file.zip 
+  423  ls
+  424  unzip ngrok-stable-linux-amd64.zip
+  425  ls
+  426  ngrok --version
+  427  sudo mv ngrok /usr/local/bin/
+  428  ngrok --version
+  429  ngrok authtoken <YOUR_AUTH_TOKEN>
+  430  ngrok http 8080
+  431  ngrok authtoken 2tzWX2FcpC4lXgUawCyWpfslC12_4g36rrfxAvFtPNCirmMsK
+  432  ngrok http 8080
+  433  ngrok update
+  434  sudo rm /usr/local/bin/ngrok
+  435  wget https://bin.equinox.io/c/4v7Dp5x2pxa/ngrok-stable-linux-amd64.zip
+  436  curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+  437  ngrok authtoken 2tzWX2FcpC4lXgUawCyWpfslC12_4g36rrfxAvFtPNCirmMsK
+  438  ngrok http 8080
+  439  git add .
+  440  git commit -m 'Automated build and deploy'
+  441  cd ..
+  442  git add .
+  443  git commit -m 'Automated build and deploy'
+  444  git push
+  445  ls -l /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  446  chmod 666 /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  447  ls -l /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  448  sudo chown jenkins_user:jenkins_group /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  449  ps aux | grep jenkins
+  450  ls -l /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  451  sudo systemctl restart jenkins
+  452  chmod +w /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  453  ps aux | grep jenkins
+  454  sudo chown -R jenkins:jenkins /home/nithin/Pluralsight/helm/node-devops-chart/
+  455  sudo chmod -R +w /home/nithin/Pluralsight/helm/node-devops-chart/
+  456  sudo chown -R jenkins:jenkins /home/nithin/Pluralsight/helm/node-devops-chart/
+  457  ls -ld /home /home/nithin /home/nithin/Pluralsight /home/nithin/Pluralsight/helm /home/nithin/Pluralsight/helm/node-devops-chart
+  458  sudo chmod +x /home
+  459  sudo chmod +x /home/nithin
+  460  sudo chmod +x /home/nithin/Pluralsight
+  461  sudo chmod +x /home/nithin/Pluralsight/helm
+  462  sudo chmod u+rw /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  463  ls -l /home/nithin/Pluralsight/helm/node-devops-chart/values.yaml
+  464  minikube start
+  465  minikube status
+  466  minikube start
+  467  minikube status
+  468  kubectl config current-context
+  469  kubectl get nodes
+  470  helm version
+  471  systemctl restart jenkins
+  472  systemctl jenkins restart
+  473  hisatory
+  474  history
+  475  sudo systemctl restart jenkins
+  476  eval $(minikube -p minikube kubectl-env)
+  477  export KUBECONFIG=$HOME/.kube/config
+  478  sudo su
+  479  export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+  480  cp  /etc/rancher/k3s/k3s.yaml ~/.kube/config
+  481  minikube status
+  482  kubectl cluster-info
+  483  eval $(minikube -p minikube kubectl-env)
+  484  eval $(minikube -p minikube docker-env)
+  485  kubectl cluster-info
+  486  export KUBECONFIG=$HOME/.kube/config
+  487  kubectl config get-contexts
+  488  kubectl config use-context minikube
+  489  $HOME/.kube/config
+  490  sudo $HOME/.kube/config
+  491  kubectl cluster-info
+  492  history
+  493  kubectl status
+  494  minikube status
+  495  systemctl jenkins restart
+  496  sudo systemctl jenkins restart
+  497  sudo systemctl restart jenkins
+  498  history > history.txt 
