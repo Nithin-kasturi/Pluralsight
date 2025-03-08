@@ -94,6 +94,7 @@ pipeline {
                         sh '''
                             git status
                             pwd
+                            cd /home/nithin/Pluralsight
                             git add .
                             git commit -m "Automated update for image tag ${IMAGE_TAG}"
                             git push https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/Nithin-kasturi/Pluralsight.git HEAD:main
