@@ -92,6 +92,7 @@ pipeline {
                         '''
                         // Add and commit any changes (like the updated deployment.yaml)
                         sh '''
+                            git status
                             git add .
                             git commit -m "Automated update for image tag ${IMAGE_TAG}"
                             git push https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/Nithin-kasturi/Pluralsight.git HEAD:main
