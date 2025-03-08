@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: node-devops
-        image: nithin8/node-devops:1.0.0-39
+        image: nithin8/node-devops:1.0.0-40
         ports:
         - containerPort: 3000
