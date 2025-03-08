@@ -82,25 +82,30 @@ pipeline {
         
         // New Git Push Step Added Here
         stage("Push Changes to Git") {
-            steps {
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'GITHUB_USER', passwordVariable: 'GITHUB_TOKEN')]) {
-                        // Configure Git user for push
-                        sh '''
-                            git config user.name "Nithin-kasturi"
-                            git config user.email "nithinkasturi8@gmail.com"
-                        '''
-                        // Add and commit any changes (like the updated deployment.yaml)
-                        sh '''
-                            git status
-                            pwd
-                            git add .
-                            git commit -m "Automated update for image tag ${IMAGE_TAG}"
-                            git push https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/Nithin-kasturi/Pluralsight.git HEAD:main
-                        '''
-                    }
+    steps {
+        script {
+            withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'GITHUB_USER', passwordVariable: 'GITHUB_TOKEN')]) {
+                // Configure Git user for push
+                sh '''
+                    git config user.name "Nithin-kasturi"
+                    git config user.email "nithinkasturi8@gmail.com"
+                '''
+                // Check if there are any changes to commit
+                def changesExist = sh(script: "git diff --exit-code", returnStatus: true) == 0 ? false : true
+
+                if (changesExist) {
+                    // Add and commit any changes (like the updated deployment.yaml)
+                    sh '''
+                        git add .
+                        git commit -m "Automated update for image tag ${IMAGE_TAG}"
+                        git push https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/Nithin-kasturi/Pluralsight.git HEAD:main
+                    '''
+                } else {
+                    echo "No changes detected, skipping Git commit and push."
                 }
             }
         }
+    }
+}
     }
 }
