@@ -57,7 +57,7 @@ pipeline {
                 script {
                     sh '''
                     echo "nithin" | sudo -S sed -i "s|image: nithin8/node-devops:.*|image: nithin8/node-devops:${IMAGE_TAG}|" /home/nithin/Pluralsight/k8s/manifests/deployment.yaml
-                    echo "nithin" | sudo -S sed -i "s|image: nithin8/node-devops:.*|image: nithin8/node-devops:${IMAGE_TAG}|" /var/lib/jenkins/workspace/Node-devops/k8s/manifestsZ/deployment.yaml
+                    echo "nithin" | sudo -S sed -i "s|image: nithin8/node-devops:.*|image: nithin8/node-devops:${IMAGE_TAG}|" /var/lib/jenkins/workspace/Node-devops/k8s/manifests/deployment.yaml
                     '''
                 }
             }
