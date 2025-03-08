@@ -68,18 +68,18 @@ pipeline{
         stage("Deploy Helm chart"){
             steps{
                 script{
-                        // kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://127.0.0.1:32769') {
+                        kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://127.0.0.1:32769') {
             
-                        // sh """
-                        //     kubectl apply -f ${PAT}/deployment.yaml
-                        //     kubectl apply -f ${PAT}/service.yaml
-                        //     kubectl apply -f ${PAT}/ingress.yaml
-                            
-                        // """
-                        // }
                         sh """
-                            helm upgrade --install ${HELM_RELEASE_NAME} ${HELM_CHART_PATH}
+                            kubectl apply -f ${PAT}/deployment.yaml
+                            kubectl apply -f ${PAT}/service.yaml
+                            kubectl apply -f ${PAT}/ingress.yaml
+                            
                         """
+                        }
+                        // sh """
+                        //     helm upgrade --install ${HELM_RELEASE_NAME} ${HELM_CHART_PATH}
+                        // """
     
                 }
             }
