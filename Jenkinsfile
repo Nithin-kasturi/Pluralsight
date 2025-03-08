@@ -56,7 +56,6 @@ pipeline{
             }
         }
         stage("Update image in deployment.yaml") {
-            
             steps {
                 script {
                     sh '''
